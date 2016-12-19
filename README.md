@@ -8,5 +8,4 @@ Extends crowded JIRA Kanban boards.
 * Click "Load Unpacked Extension"
 * Navigate to the jira-board-extender folder and click "Select"
 
-## Usage
-When on a JIRA Kanban board, simply click the icon and if the extension thinks its a bit crowded, it will double/triple/quadruple the width depending on how much space it thinks you need.
+JIRA Board Extender will apply styles to any Kanban board with more than 10 columns, and extend it off the page.
