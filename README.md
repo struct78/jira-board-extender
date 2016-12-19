@@ -4,7 +4,7 @@ Extends crowded JIRA Kanban boards.
 
 ## Installation
 * Download or clone this repository
-* Open the Chrome Extension tab ("More Tools -> Extensions")
+* Open the Chrome Extensions tab (chrome://extensions/)
 * Click "Load Unpacked Extension"
 * Navigate to the jira-board-extender folder and click "Select"
 
