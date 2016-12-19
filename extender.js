@@ -1,35 +1,17 @@
-(function() {
-	var jira_container = document.getElementById('ghx-column-header-group');
-	var jira_lanes = document.querySelectorAll('.ghx-swimlane');
-	var columns = document.querySelectorAll('.ghx-columns .ghx-column');
+function extendBoard() {
+	var swimlane = document.querySelectorAll('#ghx-pool .ghx-swimlane');
+	var body = document.getElementsByTagName('body');
+	var total = 0;
 
-	if ( jira_container ) {
-		if ( columns.length > 10 ) {
-			var width = parseInt(getComputedStyle(jira_container).width);
-			var multiplier = 1;
+	[].forEach.call(swimlane, function(item) {
+		var count = item.querySelectorAll('li.ghx-column');
+		item.classList.add( 'struct-jira-board-extender' );
+		item.classList.add( 'struct-jira-board-extender-' + count.length );
 
-			if ( width < 2000 ) {
-				multiplier = 2;
-			}
+		total = ( count > total ) ? count : total;
+	});
 
-			if ( width < 1000 ) {
-				multiplier = 4;
-			}
+	body[0].classList.add( 'struct-jira-board-extender-' + total );
+}
 
-			if ( width < 500 ) {
-				multiplier = 8;
-			}
-
-			width = width * multiplier;
-			jira_container.style.width = width + 'px';
-			jira_container.style.position = 'relative';
-			jira_container.style.top = '0px';
-			jira_container.style.left = '0px';
-
-			for ( var x = 0 ; x < jira_lanes.length ; x++ ) {
-				var lane = jira_lanes[x];
-				lane.style.width = width + 'px';
-			}
-		}
-	}
-})();
+document.addEventListener('DOMNodeInserted', extendBoard);

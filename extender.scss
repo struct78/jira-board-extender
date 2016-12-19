@@ -1,0 +1,22 @@
+$class-name: "struct-jira-board-extender";
+$width: 200px;
+$padding: 12px;
+
+#ghx-pool #ghx-column-header-group {
+	position: relative!important;
+	top: 0!important;
+	left: 0!important;
+}
+
+@for $i from 10 through 100 {
+	.#{$class-name}-#{$i} {
+
+		#ghx-pool .ghx-swimlane {
+			width: #{($width*$i)-$padding}!important;
+		}
+
+		.ghx-column, .ghx-zone-overlay div {
+			width: #{$width - $padding}!important;
+		}
+	}
+}
